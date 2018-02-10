@@ -1,8 +1,5 @@
-# !/usr/bin/venv python
+# !/usr/bin/env python
 # -*- coding:utf-8 -*-
-# @description: 使用Python脚本构建HL7标准数据库
-# @datetime: 2017-08-25
-# @author: ranzhen
 
 import os
 
