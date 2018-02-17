@@ -1,15 +1,5 @@
-#!/usr/bin/env python  
-# -*- coding: utf-8 -*-  
-
-"""  
-@author: wolfrz
-@e-mail: wolfrz@163.com
-@license: Apache Licence  
-@software: PyCharm 
-@filename: restful_test.py 
-@datetime: 2018/1/14 08:48
-@version: v1.0.0
-"""
+# !/usr/bin/env python
+# -*- coding:utf-8 -*-
 
 from flask import Flask
 from flask_restful import Api
@@ -18,13 +8,33 @@ from flask_restful import Resource
 app = Flask(__name__)
 api = Api(app)
 
-# 描  述：
-class HelloWorld(Resource):
-    # 描  述：GET函数
-    def get(self):
-        return {'Hello': 'World'}
+# 描  述:
+class HL7StdDefineds(Resource):
+    # 描  述: GET方法
+    def get(self, version):
+        return {
+            'version': version,
+            'datas': (
+                {'table': '0001', 'type': 'HL7', 'description': ''},
+                {'table': '0002', 'type': 'HL7', 'description': ''}
+            )
+        }
 
-api.add_resource(HelloWorld, '/')
+# 描  述:
+class HL7StdDefined(Resource):
+    # 描  述: GET方法
+    def get(self, version, table):
+        return {
+            'version': version,
+            'table': table,
+            'datas': (
+                {'value': '0001', 'description': ''},
+                {'value': '0001', 'description': ''}
+            )
+        }
+
+api.add_resource(HL7StdDefineds, '/api/hl7_std/defined/<string:version>')
+api.add_resource(HL7StdDefined, '/api/hl7_std/defined/<string:version>/<string:table>')
 
 if __name__ == '__main__':
     app.run()

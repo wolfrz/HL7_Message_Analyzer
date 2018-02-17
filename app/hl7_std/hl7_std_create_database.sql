@@ -23,7 +23,7 @@ CREATE TABLE `data_type` (
   `version`     VARCHAR(5)  NOT NULL  COMMENT 'HL7 Standard Version',
   `name`        VARCHAR(3)  NOT NULL  COMMENT 'Data Type Name',
   `sequence`    MEDIUMINT   NOT NULL  COMMENT 'Sequence',
-  `dataType`    VARCHAR(3)            COMMENT 'Data Type',
+  `data_type`   VARCHAR(3)            COMMENT 'Data Type',
   `length`      MEDIUMINT             COMMENT 'Length',
   `optionality` VARCHAR(1)            COMMENT 'Optionality',
   `table`       VARCHAR(4)            COMMENT 'Table',

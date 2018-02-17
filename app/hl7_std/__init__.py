@@ -1,6 +1,8 @@
 # !/usr/bin/env python
 # -*- coding:utf-8 -*-
 
+__all__ = ['HL7_STD']
+
 import os
 
 class HL7_STD(object):
@@ -32,8 +34,8 @@ class HL7_STD(object):
     def _append_file(self):
         self.__SqlFiles.append(('创建hl7_std数据库', r'%s/hl7_std_create_database.sql' % self.__dbSqlDir))
         self.__SqlFiles.append(('向Defined表插入HL7标准V2.6版数据', r'%s/hl7_std_insert_defined_2.6.sql' % self.__dbSqlDir))
-        self.__SqlFiles.append(('向DataType表插入HL7标准V2.6版数据', r'%s/hl7_std_insert_dataType_2.6.sql' % self.__dbSqlDir))
-        self.__SqlFiles.append(('向Segment表插入HL7标准V2.6版数据', r'%s/hl7_std_Insert_segment_2.6.sql' % self.__dbSqlDir))
+        self.__SqlFiles.append(('向DataType表插入HL7标准V2.6版数据', r'%s/hl7_std_insert_data_type_2.6.sql' % self.__dbSqlDir))
+        self.__SqlFiles.append(('向Segment表插入HL7标准V2.6版数据', r'%s/hl7_std_insert_segment_2.6.sql' % self.__dbSqlDir))
         self.__SqlFiles.append(('向Structure表插入HL7标准V2.6版数据', r'%s/hl7_std_insert_structure_2.6.sql' % self.__dbSqlDir))
 
     def execute_sql(self):
@@ -55,3 +57,5 @@ class HL7_STD(object):
             print('--- hl7_std数据库构建完成！ ---')
         else:
             print('--- hl7_std数据库构建失败！ ---')
+
+HL7_STD().execute_sql()
