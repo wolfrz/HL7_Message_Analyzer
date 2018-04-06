@@ -5,7 +5,7 @@ CREATE DATABASE `hl7_std` CHARACTER SET `UTF8`;
 -- 选择hl7_std数据库
 USE `hl7_std`;
 
--- 创建HL7及用户定义内容表
+-- 创建HL7及用户定义表
 CREATE TABLE `defined` (
   `version`     VARCHAR(5)  NOT NULL  COMMENT 'HL7 Standard Version',
   `table`       VARCHAR(4)  NOT NULL  COMMENT 'Table Number',

@@ -2,11 +2,12 @@
 # -*- coding:utf-8 -*-
 
 from flask_script import Manager
-from app import create_app
+from app import Application
 import os
 
-app = create_app(os.getenv('FLASK_CONFIG') or 'default')
+app = Application(os.getenv('FLASK_CONFIG') or 'default')
 manager = Manager(app)
 
 if __name__ == '__main__':
     manager.run()
+
