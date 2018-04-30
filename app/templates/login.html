@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include './public/scene.html' %}
+        <style>
+            .login_background {
+            background-image: url("../static/images/000543.jpg");
+            background-size: cover;
+        }
+        </style>
+    </head>
+    <body class="login_background">
+        <form>
+            <span>
+                <label>账号</label>
+                <input id="username" type="text" placeholder="在这里输入账号" maxlength="16" width="200">
+            </span>
+            <span>
+                <label>密码</label>
+                <input id="passowrd" type="password" placeholder="在这里输入密码" maxlength="16" width="200">
+            </span>
+            <span>
+                <button id="login">登  录</button>
+                <button id="cancel">取  消</button>
+            </span>
+        </form>
+    <script>
+        var username = $("#username").value;
+        var password = $("#password").value;
+
+    </script>
+    </body>
+</html>
