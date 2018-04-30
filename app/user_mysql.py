@@ -5,9 +5,15 @@ from pymysql.connections import Connection
 import datetime
 
 ''' Mysql操作类 '''
-class Mysql(Connection):
+class UserMysql(Connection):
     # 构造函数
-    def __init__(self, host, port=3306, username='root', password='root', database=None, charset='utf8'):
+    def __init__(self,
+                 host='localhost',
+                 port=3306,
+                 username='root',
+                 password='root',
+                 database=None,
+                 charset='utf8'):
         try:
             super().__init__(
                 host=host,
@@ -15,8 +21,7 @@ class Mysql(Connection):
                 user=username,
                 password=password,
                 database=database,
-                charset=charset
-            )
+                charset=charset)
         except Exception as e:
             print('MySQL数据库(%s)连接异常，异常原因: %s' % (database, e.args))
             raise

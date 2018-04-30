@@ -1,41 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>index</title>
-    <style type="text/css" media="screen">
-    	.layui-nav {
-    		
-    	}
-    	.layui-nav-item {
-    		list-style: none;
-    		text-align: center;
-    		float: left;
-    		/* padding: 25px; */
-    		width: 100px;
-    		height: 50px;
-    		background-color: red;
-    	}
-
-    </style>
-</head>
-
-<body>
-    <div>
-        <ul>
-            <li class="layui-nav-item">HL7消息</li>
-            <li class="layui-nav-item">HL7标准</li>
-            <li class="layui-nav-item">使用帮助</li>
-        </ul>
-    </div>
-    <div>
-    	<ul>
-    		<li class="layui-nav-item">测试用例</li>
-    		<li class="layui-nav-item">位置说明</li>
-    		<li class="layui-nav-item">乱七八糟</li>
-    	</ul>
-    </div>
-</body>
-
+<html>
+    <head>
+        {% include './public/scene.html' %}
+    </head>
+    <body>
+        {% include './public/header.html' %}
+        {% include './public/navigation.html' %}
+        {% include './public/footer.html' %}
+    </body>
 </html>

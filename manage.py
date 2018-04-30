@@ -3,10 +3,9 @@
 
 from flask_script import Manager
 from app import Application
-import os
 
-app = Application(os.getenv('FLASK_CONFIG') or 'default')
-manager = Manager(app)
+flask_obj = Application('default')
+manager = Manager(flask_obj)
 
 if __name__ == '__main__':
     manager.run()

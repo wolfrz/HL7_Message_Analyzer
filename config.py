@@ -5,32 +5,25 @@ import os
 
 project_dir = os.path.abspath(os.path.dirname(__file__))
 
-class config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'this is a secret string'
-    SQLALCHEMY_TRACK_MODIFICATIONS = True
+class configure(object):
 
     @staticmethod
-    def init_app(app):
+    def initialization(application):
         pass
 
-class DevelopmentConfig(config):
+class DevelopmentConfig(configure):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
-    'sqlite:///' + os.path.join(project_dir, 'dev')
 
-class TestingConfig(config):
+class ProductionConfig(configure):
+    DEBUG = False
+
+class TestingConfig(configure):
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or \
-    'sqlite:///' + os.path.join(project_dir, 'test')
-
-class ProductionConfig(config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-    'sqlite:///' + os.path.join(project_dir, 'data.sqlite')
 
 config = {
     'development': DevelopmentConfig,
-    'testing': TestingConfig,
     'production': ProductionConfig,
+    'testing': TestingConfig,
     'default': DevelopmentConfig
 }
 
