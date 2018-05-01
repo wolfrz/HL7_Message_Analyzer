@@ -4,7 +4,7 @@
         {% include './public/scene.html' %}
         <style>
             .login_background {
-            background-image: url("../static/images/000543.jpg");
+            background-image: url("../static/images/000501.jpg");
             background-size: cover;
         }
         </style>
@@ -20,14 +20,17 @@
                 <input id="passowrd" type="password" placeholder="在这里输入密码" maxlength="16" width="200">
             </span>
             <span>
-                <button id="login">登  录</button>
+                <button id="login" >登  录</button>
                 <button id="cancel">取  消</button>
             </span>
         </form>
     <script>
-        var username = $("#username").value;
-        var password = $("#password").value;
-
+        login_click function() {
+            var username = $("#username").value;
+            var password = $("#password").value;
+            console.log(username)
+            console.log(password)
+        }
     </script>
     </body>
 </html>

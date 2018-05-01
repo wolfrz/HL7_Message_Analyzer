@@ -1,3 +1,43 @@
+<style>
+    ul {
+        background-color: #F3F3F3;
+        border: 1px solid #E7E7E7;
+        list-style-type: none;
+        overflow: hidden;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    li {
+        float: left;
+    }
+
+    .active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    li a {
+        width: 100px;
+        color: black;
+        text-align: center;
+        display: inline-block;
+        text-decoration: none;
+        padding: 8px 16px 8px 16px;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #A1A1A1;
+        color: white;
+    }
+
+</style>
 <nav>
-    <h>导航栏</h>
+    <ul>
+        <li><a class="active" href="/">主页</a></li>
+        <li><a href="/standard">HL7标准</a></li>
+        <li><a href="/message">HL7消息</a></li>
+        <li><a href="/help">使用帮助</a></li>
+        <li style="float: right"><a href="#">关于</a></li>
+    </ul>
 </nav>
